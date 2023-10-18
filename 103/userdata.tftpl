@@ -1,0 +1,6 @@
+#!/bin/bash
+yum -y install httpd
+sed -i 's/Listen 80/Listen \${port_number}/g' /etc/httpd/conf/httpd.conf   # 설정한 포트에 맞게 
+systemctl enable httpd
+systemctl start httpd
+echo '<html><h1>Hello From Your Linux Web Server running on port ${port_number}!</h1></html>' > /var/www/html/index.html

@@ -1,0 +1,7 @@
+#!/bin/bash
+apt-get update
+apt-get -y install apache2
+sed -i 's/Listen 80/Listen ${port_number}/g' /etc/apache2/ports.conf
+systemctl enable apache2
+systemctl start apache2
+echo '<html><h1>Hello From Your Ubuntu Web Server running on port ${port_number}! </h1></html>' > /var/www/html/index.html
