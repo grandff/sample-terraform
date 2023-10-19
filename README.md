@@ -28,6 +28,36 @@ terraform 강의 내용 정리 및 예제 내용을 정리한 프로젝트다.
 │   ├── terraform.tfvars
 │   ├── tf-key.pem
 │   └── userdata.tftpl
+├── 105 // gateway add
+│   ├── main.tf
+│   ├── mykey
+│   ├── mykey.pub
+│   ├── terraform.tfstate
+│   ├── terraform.tfstate.backup
+│   ├── terraform.tfvars
+│   └── userdata.tftpl
+├── 106 // 파일 분리
+│   ├── main.tf
+│   ├── mykey
+│   ├── mykey.pub
+│   ├── outputs.tf
+│   ├── terraform.tfstate
+│   ├── terraform.tfstate.backup
+│   ├── terraform.tfvars
+│   ├── userdata.tftpl
+│   ├── variables.tf
+│   └── versions.tf
+├── 107 // final project
+│   ├── ec2.tf
+│   ├── main.tf
+│   ├── mykey
+│   ├── mykey.pub
+│   ├── terraform.tfstate
+│   ├── terraform.tfstate.backup
+│   ├── terraform.tfvars
+│   ├── userdata.tftpl
+│   ├── variables.tf
+│   └── versions.tf
 ├── file-sh-deploy  // file sh 예제
 │   ├── main.tf
 │   ├── terraform.tfstate
@@ -47,6 +77,7 @@ terraform 강의 내용 정리 및 예제 내용을 정리한 프로젝트다.
     ├── main.tf
     ├── terraform.tfstate
     └── terraform.tfstate.backup
+
 
 ## install command
 ```bash

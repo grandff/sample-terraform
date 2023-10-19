@@ -1,0 +1,9 @@
+#!/bin/bash
+yum -y install httpd
+sed -i 's/Listen 80/Listen ${port_number}/' /etc/httpd/conf/httpd.conf
+systemctl enable httpd
+systemctl start httpd
+echo '<html><h1>Hello Final Lab From Your Linux Web Server running on port ${port_number}</h1></html>' > /var/www/html/index.html
+ID=$(curl 'http://169.254.169.254/latest/meta-data/instance-d')
+AZ=$(curl 'http://169.254.169.254/latest/meta-data/placement/availability-zone')
+printf "<h2>Instance-id : %s<br>AZ: %s</h2>\n" $ID $AZ >> /var/www/html/index.html

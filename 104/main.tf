@@ -30,14 +30,9 @@ resource "aws_launch_template" "web" {
 
   # user_data는 base64 인코딩
   user_data = base64encode(
-    <<-EOF
-    #!/bin/bash
-    yum -y install httpd
-    sed -i 's/Listen 80/Listen ${var.server_port}/' /etc/httpd/conf/httpd.conf
-    systemctl enable httpd
-    systemctl start httpd
-    echo '<html><h1>Hello From Your Linux Web Server running on port ${var.server_port}</h1></html>' > /var/www/html/index.html
-    EOF
+    templatefile("userdata.tftpl",{
+      port_number = var.server_port
+    })
   )
 
   tags = {
